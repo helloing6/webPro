@@ -17,6 +17,7 @@ layui.use(['layer', 'form', 'jquery'], function() {
             success: function (result) {
                 console.log(result);
                 if (result.code === 200) {
+                    $.cookie("loginId", result.result.loginId);
                     setTimeout(function() {
                         layer.close(index);
                         layer.msg('登录成功', {
